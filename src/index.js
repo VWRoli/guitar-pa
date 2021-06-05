@@ -7,6 +7,8 @@ const userRouter = require('./routers/user');
 const app = express();
 const port = process.env.PORT;
 
+app.get('/');
+
 app.use(express.json());
 
 app.use(itemRouter);
