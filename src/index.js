@@ -1,5 +1,6 @@
 const express = require('express');
 require('./db/mongoose');
+const path = require('path');
 
 const itemRouter = require('./routers/practiceItem');
 const userRouter = require('./routers/user');
@@ -7,7 +8,9 @@ const userRouter = require('./routers/user');
 const app = express();
 const port = process.env.PORT;
 
-app.get('/');
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/index.html'));
+});
 
 app.use(express.json());
 
